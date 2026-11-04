@@ -1,0 +1,444 @@
+:root {
+    --main-color: #d3ad7f;
+    --black: #13131a;
+    --bg: #010103;
+    --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    min-width: 320px;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    padding: 3rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* ===== Cabeçalho ===== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border-bottom: var(--border);
+    background-color: var(--bg);
+}
+
+.header section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.logo img {
+    display: block;
+    width: 8rem;
+}
+
+.navbar a {
+    margin: 0 1rem;
+    font-size: 1.8rem;
+    color: #fff;
+    border-bottom: 0.1rem solid transparent;
+    padding-bottom: 0.5rem;
+}
+
+.navbar a:hover {
+    color: var(--main-color);
+    border-bottom-color: var(--main-color);
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.icons img {
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.icons img:hover {
+    transform: scale(1.2);
+}
+
+/* Botão do menu (só aparece no celular) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 4rem;
+    height: 4rem;
+    padding: 0.8rem;
+    background: transparent;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 0.25rem;
+    width: 100%;
+    background: #fff;
+    border-radius: 1rem;
+}
+
+.menu-toggle.active span:nth-child(1) { transform: translateY(0.75rem) rotate(45deg); }
+.menu-toggle.active span:nth-child(2) { opacity: 0; }
+.menu-toggle.active span:nth-child(3) { transform: translateY(-0.75rem) rotate(-45deg); }
+
+/* ===== Botões ===== */
+.btn {
+    background: var(--main-color);
+    color: #fff;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn:hover {
+    letter-spacing: 0.1rem;
+}
+
+/* ===== Home ===== */
+.home-container {
+    background: url("img/home-img.jpg") center / cover no-repeat;
+}
+
+.home-container section {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 12rem;
+    padding-bottom: 6rem;
+}
+
+.content {
+    max-width: 100rem;
+}
+
+.content h3 {
+    color: #fff;
+    font-size: 6rem;
+}
+
+.content p {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 100;
+    line-height: 1.8;
+    padding: 1rem 0;
+}
+
+.title {
+    font-size: 3rem;
+    color: var(--main-color);
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+}
+
+.title span {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* ===== Sobre ===== */
+.about .row {
+    display: flex;
+    align-items: center;
+    background-color: var(--black);
+    gap: 1.5rem;
+}
+
+.about .row .container-img,
+.about .row .content {
+    flex: 1 1 50%;
+    min-width: 0;
+}
+
+.about .row .container-img img {
+    display: block;
+    width: 100%;
+    min-height: 32rem;
+    object-fit: cover;
+}
+
+.about .row .content {
+    padding: 2rem;
+}
+
+.about .row .content h3 {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.about .row .content p {
+    font-size: 1.6rem;
+    color: #fff;
+    padding: 1.3rem 0;
+    line-height: 1.8;
+}
+
+/* ===== Grades (menu e avaliações) ===== */
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 28rem), 1fr));
+    gap: 1.5rem;
+}
+
+.menu .box-container .box {
+    text-align: center;
+    border: var(--border);
+    padding: 3rem;
+    cursor: pointer;
+}
+
+.menu .box-container .box:hover {
+    background-color: #fff;
+}
+
+.menu .box-container .box img {
+    height: 10rem;
+}
+
+.menu .box-container .box h3 {
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+
+.menu .box-container .box .price {
+    color: #fff;
+    font-size: 2.5rem;
+    padding: 0.5rem 0;
+}
+
+.menu .box-container .box .price span {
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    font-weight: lighter;
+}
+
+.menu .box-container .box:hover > * {
+    color: var(--black);
+}
+
+.menu .box-container .box:hover .btn {
+    color: #fff;
+}
+
+.review .box-container .box {
+    border: var(--border);
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.review .box-container .box p {
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 2rem 0;
+    line-height: 1.8;
+    font-weight: lighter;
+}
+
+.review .box-container .box h3 {
+    color: #fff;
+    font-size: 1.8rem;
+    margin: 1rem 0;
+}
+
+.review .box-container .box .user {
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.review .stars img {
+    width: 2.6rem;
+    height: 2.6rem;
+}
+
+/* ===== Endereço ===== */
+.address iframe {
+    display: block;
+    width: 100%;
+    height: 45rem;
+    border: 0;
+}
+
+/* ===== Rodapé ===== */
+.footer {
+    text-align: center;
+}
+
+.footer .share {
+    padding: 1rem 0;
+}
+
+.footer .share img {
+    margin: 0.3rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    box-sizing: content-box;
+}
+
+.footer .share img:hover {
+    background-color: var(--main-color);
+}
+
+/* ===== Tablets ===== */
+@media (max-width: 992px) {
+    html { font-size: 56.25%; }
+
+    .content h3 { font-size: 5rem; }
+
+    .about .row { flex-direction: column; gap: 0; }
+
+    .about .row .container-img img {
+        min-height: 0;
+        max-height: 42rem;
+    }
+}
+
+/* ===== Celulares ===== */
+@media (max-width: 768px) {
+    html { scroll-padding-top: 8rem; }
+
+    .header section {
+        padding: 1rem 1.6rem;
+        gap: 1rem;
+    }
+
+    .logo img { width: 6.5rem; }
+
+    .icons img {
+        width: 2.6rem;
+        height: 2.6rem;
+        margin: 0 0.6rem;
+    }
+
+    .menu-toggle { display: flex; order: 3; margin-left: 0.4rem; }
+
+    /* Menu suspenso */
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--black);
+        border-bottom: var(--border);
+        display: flex;
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    .navbar.active { max-height: 40rem; }
+
+    .navbar a {
+        margin: 0;
+        padding: 1.6rem 2.4rem;
+        font-size: 1.8rem;
+        border-bottom: var(--border);
+    }
+
+    .navbar a:last-child { border-bottom: none; }
+
+    .navbar a:hover {
+        background-color: var(--bg);
+        border-bottom-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Home com fundo mais escuro para o texto ficar legível */
+    .home-container {
+        background-position: 70% center;
+        box-shadow: inset 0 0 0 100vmax rgba(1, 1, 3, 0.55);
+    }
+
+    .home-container section {
+        min-height: 85vh;
+        padding-top: 10rem;
+        padding-bottom: 5rem;
+    }
+
+    .content h3 {
+        font-size: 3.6rem;
+        line-height: 1.2;
+    }
+
+    .content h3 br,
+    .home-container .content p br { display: none; }
+
+    .content p {
+        font-size: 1.6rem;
+        line-height: 1.6;
+    }
+
+    section { padding: 3rem 1.6rem; }
+
+    .title {
+        font-size: 2.8rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .about .row .content { padding: 2rem 1.6rem; }
+    .about .row .content h3 { font-size: 2.4rem; }
+
+    .box-container { grid-template-columns: 1fr; gap: 1.2rem; }
+
+    .menu .box-container .box,
+    .review .box-container .box { padding: 2.5rem 1.5rem; }
+
+    .address iframe { height: 32rem; }
+
+    .btn {
+        padding: 1.2rem 2.4rem;
+        font-size: 1.6rem;
+    }
+}
+
+/* Celulares bem estreitos */
+@media (max-width: 360px) {
+    .content h3 { font-size: 3rem; }
+    .icons img { margin: 0 0.3rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
